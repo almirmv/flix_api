@@ -32,13 +32,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # meus apps
     'rest_framework',
-    'rest_framework_simplejwt', # pip install djangorestframework-simplejwt
+    'rest_framework_simplejwt',  # pip install djangorestframework-simplejwt
     'actors',
     'authentication',
     'genres',
     'movies',
     'reviews',
-    
+
 ]
 
 MIDDLEWARE = [

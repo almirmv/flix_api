@@ -5,13 +5,14 @@ from genres.serializers import GenreSerializer
 # permissao customizada
 from app.permissions import GlobalDefaultPermission
 
+
 class GenreCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Genre.objects.all()      # quando for list
     serializer_class = GenreSerializer
 
+
 class GenreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
-    
