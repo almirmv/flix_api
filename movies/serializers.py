@@ -16,9 +16,9 @@ class MovieListDetailSerializer(serializers.ModelSerializer):
 
     # metodo para o campo calculado. padaro "def_nomedocampocalculado(self, obj)
     def get_rate(self, obj):
-        rate = obj.reviews.aggregate(Avg('stars'))['stars']
-        if rate:
-            return round(rate, 1)
+        average_rate = obj.reviews.aggregate(Avg('stars'))['stars__avg']
+        if average_rate:
+            return round(average_rate, 1)
         return None
 
 
